@@ -13,9 +13,11 @@ int main(int argc, char const *argv[])
     }
     else
     {
+        int estado;
         printf("Soy el padre\n");
-        wait(NULL);
+        wait(&estado);
+        printf("El hijo ha acabado con el estado de retorn: %d\n", WEXITSTATUS(estado));
     }
     printf("Hola, soy %d\n", getpid());
-    return 0;
+    return 2;
 }

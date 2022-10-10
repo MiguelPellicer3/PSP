@@ -1,0 +1,4 @@
+total 24
+-rw-r--r-- 1 usuario usuario     0 oct 10 16:59 ls.txt
+-rw-r--r-- 1 usuario usuario   257 oct 10 16:58 progSystem.c
+-rwxr-xr-x 1 usuario usuario 16760 oct 10 16:58 progSystem.exe

@@ -15,7 +15,6 @@ int main(int argc, char const *argv[])
         printf("Soy el hijo\n");
         sleep(1);
         kill(getppid(),SIGINT);
-              
     }else{
         printf("Soy el padre\n");
         pause();

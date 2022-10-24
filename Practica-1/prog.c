@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     char sha512[100] = "sha512sum ";
     char salida[50] = " > ";
     char resultadoConcat[100] = " >> ";
-    
+
     if(argc < 2){
         printf("No se han introducido parámetros\n");
     }
@@ -70,7 +70,6 @@ int main(int argc, char *argv[])
                 printf("El hijo con PID: %d ha finalizado CON ERROR \n", pidHijo);
             }
         }
-
         return 0;
     }
 }

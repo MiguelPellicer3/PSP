@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
     char salida[50] = " > ";
     char resultadoConcat[100] = " >> ";
     
-    
     if(argc < 2){
         printf("No se han introducido parámetros\n");
     }
@@ -64,11 +63,11 @@ int main(int argc, char *argv[])
             pidHijo = wait(&estado);
             if (WEXITSTATUS(estado) == 0)
             {
-                printf("El hijo con PID: %d ha finalizado con éxito \n", pidHijo);
+                printf("El hijo con PID: %d ha finalizado BIEN \n", pidHijo);
             }
             else
             {
-                printf("El hijo con PID: %d ha finalizado con error \n", pidHijo);
+                printf("El hijo con PID: %d ha finalizado CON ERROR \n", pidHijo);
             }
         }
 

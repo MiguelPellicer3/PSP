@@ -8,11 +8,15 @@ public class Contador {
 		super();
 		this.numero = numero;
 	}
-	public void incrementar() {
-		numero++;
+	public synchronized void incrementar() {
+//		synchronized (this) {
+			numero++;			
+//		}
 	}
-	public void decrementar() {
-		numero--;
+	public synchronized void decrementar() {
+//		synchronized (this) {
+			numero--;
+//		}
 	}
 	@Override
 	public String toString() {

@@ -35,13 +35,13 @@ class ULTIMA_ACTUALIZACION {
 	public ULTIMA_ACTUALIZACION() {
 		super();
 	}
-	public ULTIMA_ACTUALIZACION(String fORMATO, double fECHA) {
+	public ULTIMA_ACTUALIZACION(String fORMATO, String fECHA) {
 		super();
 		FORMATO = fORMATO;
 		FECHA = fECHA;
 	}
 	public String FORMATO;
-	public double FECHA;
+	public String FECHA;
 }
 
 class HORARIO { 

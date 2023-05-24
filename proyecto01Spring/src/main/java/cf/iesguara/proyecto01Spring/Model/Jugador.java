@@ -11,13 +11,21 @@ import lombok.Data;
 @Data
 @Entity
 @Table
-public class Film {
+public class Jugador {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(nullable = false)
-	private String title;
+	private String nombre;
+	@Column(nullable = false)
+	private String apellidos;
 	@Column(nullable = true)
-	private int duration;
+	private int dorsal;
+	@Column(nullable = true)
+	private int partidosJugados;
+	@Column(nullable = true)
+	private int goles;
+	@Column(nullable = true)
+	private String Pais;
 }

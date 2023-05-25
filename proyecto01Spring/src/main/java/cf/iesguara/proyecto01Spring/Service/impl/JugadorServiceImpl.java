@@ -2,8 +2,6 @@ package cf.iesguara.proyecto01Spring.Service.impl;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import cf.iesguara.proyecto01Spring.Model.Jugador;
@@ -44,6 +42,7 @@ public class JugadorServiceImpl implements JugadorService{
 	
 	@Override
 	public Jugador putJugador(long idJugador,Jugador jugador) {
+		jugador.setId(idJugador);
 		Jugador jug = jugadorRepository.findById(idJugador).orElse(null);
 		if(jug!=null) {
 			jug = jugadorRepository.save(jugador);

@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import cf.iesguara.proyecto01Spring.Exception.RecursoNoEncontradoException;
 import cf.iesguara.proyecto01Spring.Model.Jugador;
 import cf.iesguara.proyecto01Spring.Service.impl.JugadorService;
 
@@ -27,29 +27,29 @@ public class JugadorController {
 		this.jugadorService = filmService;
 	}
 	
-	@GetMapping("all")
+	@GetMapping()
 	public ResponseEntity<List<Jugador>> getAllJugador(){
 		return  new ResponseEntity<List<Jugador>>(jugadorService.getAllFilms() , HttpStatus.OK);
 	}
 	
-	//Get /peliculas?id=1
-	@GetMapping
-	public ResponseEntity<Jugador> showJugador(@RequestParam("id") String idJugador ){
-		Long id = Long.parseLong(idJugador);
-		Jugador jugador = jugadorService.getById(id);
-		if(jugador==null) {
-			return  new ResponseEntity<Jugador>(HttpStatus.NOT_FOUND);
-		}
-		return  new ResponseEntity<Jugador>(jugador , HttpStatus.OK);
-	}
+//	//Get /jugadores?id=1
+//	@GetMapping
+//	public ResponseEntity<Jugador> showJugador(@RequestParam("id") String idJugador ){
+//		Long id = Long.parseLong(idJugador);
+//		Jugador jugador = jugadorService.getById(id);
+//		if(jugador==null) {
+//			return  new ResponseEntity<Jugador>(HttpStatus.NOT_FOUND);
+//		}
+//		return  new ResponseEntity<Jugador>(jugador , HttpStatus.OK);
+//	}
 	
 	
-	//Get /peliculas/1 <---- PathVariable
+	//Get /jugadores/1 <---- PathVariable
 	@GetMapping("/{id}")
 	public ResponseEntity<Jugador> showJugador(@PathVariable("id") long idJugador ){
 		Jugador jugador = jugadorService.getById(idJugador);
 		if(jugador==null) {
-			return  new ResponseEntity<Jugador>(HttpStatus.NOT_FOUND);
+			throw new RecursoNoEncontradoException("Jugador", "id", idJugador);
 		}
 		return  new ResponseEntity<Jugador>(jugador , HttpStatus.OK);
 	}
